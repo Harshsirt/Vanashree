@@ -1,4 +1,3 @@
-// App.jsx
 import { useState } from "react"
 import Login from "./components/Login"
 import Register from "./components/Register"
@@ -14,7 +13,6 @@ export default function App() {
     <div className="bg-gray-300 min-h-screen flex justify-center items-center">
       <div className="w-full max-w-md bg-white h-[90vh] rounded-2xl shadow-2xl overflow-hidden">
 
-        {/* LOGIN */}
         {!user && page === "login" && (
           <Login
             login={(u) => {
@@ -29,17 +27,17 @@ export default function App() {
           />
         )}
 
-        {/* REGISTER */}
+       
         {!user && page === "register" && (
           <Register goLogin={() => setPage("login")} />
         )}
 
-        {/* HOME */}
+        
         {user && page === "home" && (
           <Home add={() => setPage("add")} posts={posts} />
         )}
 
-        {/* ADD POST */}
+       
         {user && page === "add" && (
           <AddPost
             back={() => setPage("home")}
