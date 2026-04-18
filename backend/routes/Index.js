@@ -25,7 +25,7 @@ router.post("/sendotp", async (req, res) => {
       from: `Vanashree App <${process.env.EMAIL_USER}>`,
       to: email,
       subject: "Your OTP for Vanashree",
-      text: `Hi! Your OTP is ${otp}. It is valid for 1 minute.`
+      text: `Your OTP is ${otp}. It is valid for 1 minute.`
     })
 
     res.json({ msg: "OTP sent" })
