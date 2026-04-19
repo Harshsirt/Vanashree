@@ -26,7 +26,7 @@ export default function Register({ goLogin }) {
   }
 
   const verifyOtp = async () => {
-    const res = await fetch("http://localhost:3000/api/verifyOtp", {
+    const res = await fetch("http://localhost:5000/api/verifyOtp", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, otp })
@@ -38,7 +38,7 @@ export default function Register({ goLogin }) {
 
  const handleRegister = async () => {
     if (!otpVerified) return setMsg("Verify OTP first")
-    const res = await fetch("http://localhost:3000/api/register", {
+    const res = await fetch("http://localhost:5000/api/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, phone, email, password })
